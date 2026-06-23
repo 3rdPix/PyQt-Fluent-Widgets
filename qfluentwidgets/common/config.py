@@ -11,7 +11,6 @@ from PyQt6.QtGui import QColor
 from .exception_handler import exceptionHandler
 
 
-ALERT = "\n\033[1;33m📢 Tips:\033[0m QFluentWidgets Pro is now released. Click \033[1;96mhttps://qfluentwidgets.com/pages/pro\033[0m to learn more about it.\n"
 
 
 class Theme(Enum):
@@ -406,11 +405,6 @@ class QConfig(QObject):
 QT_VERSION = tuple([int(v) for v in qVersion().split('.')])
 
 qconfig = QConfig()
-try:
-    print(ALERT)
-except UnicodeEncodeError:
-    print(ALERT.replace("📢", ""))
-
 
 def isDarkTheme():
     """ whether the theme is dark mode """
